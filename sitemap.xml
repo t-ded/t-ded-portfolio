@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/post/</loc>
+    <lastmod>2020-07-06T14:00:00-15:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/</loc>
+    <lastmod>2020-07-06T14:00:00-15:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/projects/</loc>
+    <lastmod>2020-07-06T14:00:00-15:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/data-science/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/machine-learning/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/programming/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/projects/project-1/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/python/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/regression/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/tags/visualisation/</loc>
+    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://luciasom.github.io/TD-DA-Portfolio/contact/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
