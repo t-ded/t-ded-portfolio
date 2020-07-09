@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Data Science Portfolio</title>
-    <link>https://luciasom.github.io/TD-DA-Portfolio/tags/</link>
+    <link>https://t-ded.github.io/t-ded-portfolio/tags/</link>
     <description>Recent content in Tags on Data Science Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Jul 2020 15:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://luciasom.github.io/TD-DA-Portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://t-ded.github.io/t-ded-portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Science</title>
-      <link>https://luciasom.github.io/TD-DA-Portfolio/tags/data-science/</link>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/data-science/</link>
       <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://luciasom.github.io/TD-DA-Portfolio/tags/data-science/</guid>
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>https://luciasom.github.io/TD-DA-Portfolio/tags/machine-learning/</link>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/machine-learning/</link>
       <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://luciasom.github.io/TD-DA-Portfolio/tags/machine-learning/</guid>
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>https://luciasom.github.io/TD-DA-Portfolio/tags/programming/</link>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/programming/</link>
       <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://luciasom.github.io/TD-DA-Portfolio/tags/programming/</guid>
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://luciasom.github.io/TD-DA-Portfolio/tags/python/</link>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/python/</link>
       <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://luciasom.github.io/TD-DA-Portfolio/tags/python/</guid>
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regression</title>
-      <link>https://luciasom.github.io/TD-DA-Portfolio/tags/regression/</link>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/regression/</link>
       <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://luciasom.github.io/TD-DA-Portfolio/tags/regression/</guid>
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualisation</title>
-      <link>https://luciasom.github.io/TD-DA-Portfolio/tags/visualisation/</link>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</link>
       <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://luciasom.github.io/TD-DA-Portfolio/tags/visualisation/</guid>
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</guid>
       <description></description>
     </item>
     

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About me on Data Science Portfolio</title>
-    <link>https://luciasom.github.io/TD-DA-Portfolio/about/</link>
+    <link>https://t-ded.github.io/t-ded-portfolio/about/</link>
     <description>Recent content in About me on Data Science Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://luciasom.github.io/TD-DA-Portfolio/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://t-ded.github.io/t-ded-portfolio/about/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
