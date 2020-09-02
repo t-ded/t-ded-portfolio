@@ -6,19 +6,18 @@
     <description>Recent content on Data Science Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jul 2020 14:00:00 -1500</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2020 15:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://t-ded.github.io/t-ded-portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Project 1 Overview: Analysis of hotel reviews</title>
-      <link>https://t-ded.github.io/t-ded-portfolio/projects/project-1/</link>
-      <pubDate>Mon, 06 Jul 2020 15:00:00 +0000</pubDate>
+      <link>https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/</link>
+      <pubDate>Tue, 01 Sep 2020 15:00:00 +0000</pubDate>
       
-      <guid>https://t-ded.github.io/t-ded-portfolio/projects/project-1/</guid>
-      <description>Brief overview
- Comprehensively explored and visualized the data, followed up by predicting score given by the reviewer with RMSE of 0.81 points on 1-10 review scale Engineered multiple features from the data, such as country of each hotel from address and length of stay from tags of each review Performed sentiment analysis on text for each review, managed to find the most impactful pairs of words and how they affected the reviewer Implemented Linear Regression, Decision Tree and Random Forest algorithms, extracted feature importance and performed feature selection  Link to project´s repository on GitHub</description>
+      <guid>https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/</guid>
+      <description>Analysis of more than 515 thousand reviews for European hotels - Regression task - Project Overview: Project Summary  Comprehensively explored and visualized the data, followed up by predicting score given by the reviewer with RMSE of 0.73 points on 1-10 review scale. Engineered multiple features from the data, such as country of each hotel from address and length of stay from tags of each review. Performed sentiment analysis on text for each review, managed to find the most impactful pairs of words and how they affected the reviewer.</description>
     </item>
     
     <item>

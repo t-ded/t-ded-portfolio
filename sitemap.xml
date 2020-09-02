@@ -3,14 +3,70 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/post/</loc>
-    <lastmod>2020-07-06T14:00:00-15:00</lastmod>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/data-science/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://t-ded.github.io/t-ded-portfolio/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/machine-learning/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/programming/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/python/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/regression/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</loc>
+    <lastmod>2020-09-01T15:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://t-ded.github.io/t-ded-portfolio/post/</loc>
     <lastmod>2020-07-06T14:00:00-15:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -19,62 +75,6 @@
   <url>
     <loc>https://t-ded.github.io/t-ded-portfolio/projects/</loc>
     <lastmod>2020-07-06T14:00:00-15:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/data-science/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/machine-learning/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/programming/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/projects/project-1/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/python/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/regression/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</loc>
-    <lastmod>2020-07-06T15:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

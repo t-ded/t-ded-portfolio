@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 1 Overview: Analysis of hotel reviews | Data Science Portfolio</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://t-ded.github.io/t-ded-portfolio/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 1 Overview: Analysis of hotel reviews" />
+<meta property="og:description" content="Regression task: Analyse more than 515 thousand reviews for European hotels" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/" />
+<meta property="article:published_time" content="2020-09-01T15:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-01T15:00:00+00:00" />
+<meta itemprop="name" content="Project 1 Overview: Analysis of hotel reviews">
+<meta itemprop="description" content="Regression task: Analyse more than 515 thousand reviews for European hotels">
+<meta itemprop="datePublished" content="2020-09-01T15:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-01T15:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2111">
+
+
+
+<meta itemprop="keywords" content="Python,Data Science,Regression,Visualisation,Machine Learning,Programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 1 Overview: Analysis of hotel reviews"/>
+<meta name="twitter:description" content="Regression task: Analyse more than 515 thousand reviews for European hotels"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Comparison%20of%20evolution%20of%20reviews%20over%20time%20for%20chosen%20hotels.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://t-ded.github.io/t-ded-portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Data Science Portfolio
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/about/" title="About me page">
+              About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 1 Overview: Analysis of hotel reviews</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Regression task: Analyse more than 515 thousand reviews for European hotels
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/&amp;text=Project%201%20Overview:%20Analysis%20of%20hotel%20reviews" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/&amp;title=Project%201%20Overview:%20Analysis%20of%20hotel%20reviews" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 1 Overview: Analysis of hotel reviews</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-09-01T15:00:00Z">September 1, 2020</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 10 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 2111 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="analysis-of-more-than-515-thousand-reviews-for-european-hotels---regression-task---project-overviewhttpst-dedgithubiot-ded-portfolioprojectsproject-1"><a href="https://t-ded.github.io/t-ded-portfolio/projects/project-1/">Analysis of more than 515 thousand reviews for European hotels - Regression task - Project Overview:</a></h1>
+<h2 id="project-summary">Project Summary</h2>
+<ul>
+<li>Comprehensively <strong>explored and visualized</strong> the data, followed up by predicting score given by the reviewer with <strong>RMSE of 0.73</strong> points on 1-10 review scale.</li>
+<li><strong>Engineered multiple features</strong> from the data, such as country of each hotel from address and length of stay from tags of each review.</li>
+<li>Performed <strong>sentiment analysis</strong> on text for each review, managed to find the most impactful pairs of words and how they affected the reviewer.</li>
+<li>Implemented <strong>Regressive Histogram Gradient Boosting</strong>, Linear Regression, and Random Forest algorithms, extracted <strong>feature importance and performed feature selection</strong>.</li>
+<li>Might actually bring <strong>meaningful business implementation</strong> for a company in a related field (both the algorithms and findings of my EDA).</li>
+<li>In the future, the continuous target variable may be transformed into an ordinal categorical one, enabling me to try classification algorithms.</li>
+<li>Also, a <strong>clustering analysis</strong> may be performed onto the reviewers, giving us even more precious insight into their demands and behaviour.</li>
+</ul>
+<h2 id="project-background">Project Background</h2>
+<ul>
+<li>This dataset has been chosen as it revolves around a topic which is close to almost anyone; apart from that it offers a possibility of an impactful business implementation.</li>
+<li>The <a href="https://www.kaggle.com/jiashenliu/515k-hotel-reviews-data-in-europe">initial dataset</a> consists of 515 738 reviews and 34 features, one of them being the reviewer score which is the dependent variable.</li>
+<li>For this project, EDA, visualisation and data interpretation have been given priority over algorithms as it seemed to me that for this particular dataset, it would be much easier to actually implement the results in the form of graphs, charts and plots into business, rather than estimator predictions and their coefficients.</li>
+</ul>
+<h2 id="project-outline">Project Outline</h2>
+<ul>
+<li>State the initial hypotheses.</li>
+<li>Make necessary imports, take first look at the dataset.</li>
+<li>Extract country of each hotel from review and analyse hotel countries and reviewer nationalities.</li>
+<li>Find the best and worst hotels, analyse these extremes in relation to country of each hotel.</li>
+<li>Analysis of reviews in relation to time.</li>
+<li>Dive into tags - length of stay, with whom, purpose of the trip etc.</li>
+<li>Analyse reviews - positive, negative, lengths of each, sentiments.</li>
+<li>Inspect correlation.</li>
+<li>Implement models for regression tasks (multivariate linear regression, decision tree regressor, random forest reg.).</li>
+</ul>
+<h2 id="initial-hypotheses">Initial Hypotheses</h2>
+<p>Let me start with some initial hypotheses around which the following analysis will revolve. I will be trying to either prove or disprove them and they will lead my path throughout the entire project. My hypotheses are the following:</p>
+<ul>
+<li>Long negative review will correspond to worse rating (vice versa for positive).</li>
+<li>Newer reviews of the same hotel will be better (improvements based on the reviews).</li>
+<li>Reviewer nationality influences the average given score.</li>
+<li>Some countries will have better hotels in general.</li>
+<li>People will prefer to visit hotels in their country and will give them better rating.</li>
+<li>Some words in positive/negative review will have big impact.</li>
+<li>Some tags will have an impact.</li>
+</ul>
+<h2 id="analysis-breakdown">Analysis breakdown</h2>
+<h3 id="first-steps">First steps</h3>
+<p>The beginnings of this project were nowhere away from the ordinary. I started out with typical import such as pandas, numpy, matplotlib and seaborn and later on I added specific parts of nltk and sklearn libraries for text analysis and predictions, respectively.<br>
+Next up were some common initial steps and first glances at the dataset. This was achieved with ordinary pandas functions (or functions of the pandas DataFrame object) such as read_csv, shape, head, info etc.<br>
+After few looks, I found out that the country and the city of each hotel are easily accessible from the hotel address column. Nevertheless, it occurred to me, that each country is represented only by one city, therefore the city column was meaningless and was dropped in addition to other columns, such as the hotel address, lattitude or longitude.<br>
+In the picture, you can see how my dataset looked like after these first steps. The data contained zero missing values, which made the initial data cleaning a lot easier, than it would be in most real-life tasks.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/initial_dfinfo.PNG"/> <figcaption>
+            <h4>This is what the dataframe looked like after the initial steps</h4>
+        </figcaption>
+</figure>
+
+<h3 id="country-analysis">Country analysis</h3>
+<p>The next step was analysis from the perspective of countries, both country of the hotel and country of each reviewer.<br>
+However, there was a massive amount of unique countries in the reviewer country column. Therefore, I have decided to only look at the most frequent ones. For this purpose, I have created two functions; one allowed me to drop countries with value counts below a given threshold. The second one enabled me to only look at n most frequent countries.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/more_most_frequent.PNG"/> <figcaption>
+            <h4>Functions to keep only more frequent values than x or the n most frequent values</h4>
+        </figcaption>
+</figure>
+
+<p>Right from the start, I noticed a few things.<br>
+The United Kingdom was by far the most visited country as well as the country with the most reviewers.<br>
+I also found out that the country of each reviewer mattered quite a lot (as opposed to the country of each hotel) as there was a difference of more than one whole review point between the USA (country with the most positive feedback) and Iran (country with the lowest average review score).</p>
+<p>In the following picture you can see the preferred country for reviewers coming from the 4 most frequent countries. It is not very surprising that people from the UK are far more likely to visit the UK than the other 5 countries.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Most%20visited%20countries%20based%20on%20the%20nationality%20of%20reviewers.png"/> <figcaption>
+            <h4>Most visited countries based on the nationality of reviewers</h4>
+        </figcaption>
+</figure>
+
+<p>Apart from this, I also checked whether the reviewers had given better ratings to hotels in their country of origin to any extent. However, I have not found any such relation.</p>
+<h3 id="individual-hotel-analysis">Individual hotel analysis</h3>
+<p>After the country analysis I went on to analyse the hotels individually based on their name. That way, I found out, that hotel &ldquo;Ritz Paris&rdquo; is the best European hotel with the average score of 9.8, while &ldquo;Hotel Liberty&rdquo; is the worst one with 5.2.</p>
+<p>This analysis led me to a very interesting idea of examining the extremes and their relation to the country of each hotel. This enabled me to compare the individual countries based on their occurrence in the top 50 or worst 50 (using the overall country distribution to see the differences).</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Top%20worst%2050.png" height="210"/> <figcaption>
+            <h4>How does country distribution change if we only take a look at the best and worst 50 hotels?</h4>
+        </figcaption>
+</figure>
+
+<h3 id="time-analysis">Time analysis</h3>
+<p>Next up was the time analysis. This step was quite exciting for me as it incorporated working with time data in pandas, which can be a bit of a challenge from time to time. After some experiments I managed to create functions that would show the score evolution for the individual hotels based on their name.</p>
+<p>The main problem was that not every hotel had the necessary amount of reviews to form such graph and as the reviews could range from 1 to 10, the graph might not tell the story very well. Therefore, I normalized the outliers and filled the blank spaces with the average score of the surrounding reviews. 
+That way, I obtained way less &ldquo;spiky&rdquo; chart.</p>
+<p>After I had created the function for the individual hotels, I realised that it would be great to be able to compare the score evolution for different hotels in time. I adapted the function a little and the result enabled me to enter a list of 5 different hotel names to compare.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Time%20evolution%20of%20the%20worst%20five%20hotels.png"/> <figcaption>
+            <h4>Time evolution of the reviews for the worst five hotels</h4>
+        </figcaption>
+</figure>
+
+<h3 id="text-analysis-for-tags">Text analysis for tags</h3>
+<p>The following step was quite difficult but also one of the most interesting ones. Each review had a tag which would tell us, whether the person had a pet on the vacation, who did he or she travel with etc.</p>
+<p>The first goal was to divide these tags into the individual features. This was the hard part as not all the reviews contained all tags, therefore it was quite a challenge to dig the information from some of the reviews.</p>
+<p>As it came out, whether or not the person took a pet or was on a business trip rather than a vacation did not matter as much. However, the insight into the combination of travel group and length of stay and their combined effect on the average rating was quite interesting.
+(Note: The 2 highest average scores, both in &ldquo;Travelers with friends&rdquo;, namely 10-15 and 15+ days, both had only 1 or 2 occurrences, therefore cannot be considered of any value.)</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Average%20rating%20of%20a%20hotel%20based%20on%20the%20length%20of%20stay%20and%20travelling%20group.png"/> <figcaption>
+            <h4>Average rating of a hotel based on the length of stay and travelling group</h4>
+        </figcaption>
+</figure>
+
+<h3 id="text-analysis-for-reviews">Text analysis for reviews</h3>
+<p>And now the longest and probably the most insightful part. Content analysis of the text for each review.</p>
+<p>The dataset was made such that each review had a &ldquo;positive&rdquo; and &ldquo;negative&rdquo; part.
+This enabled me to examine these individually and as it turned out, that was quite an important step, as each part (positive and negative) had its keywords. Apart from that, the number of words in each part (or their ratio) was a very interesting measure.</p>
+<p>As the length of these parts was a predefined feature, it felt only natural to start with the inspection of that. In the following picture you may see the relation between the average score of a hotel and the average length of its positive and negative reviews.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/avg%20score%20based%20on%20avg%20length%20of%20posneg%20word%20counts.png"/> 
+</figure>
+
+<p>After this step, the actual text analysis could start. Using CountVectorizer function from the sklearn package, I managed to find the most impactful keywords of both positive and negative reviews.<br>
+Four of these were chosen for each of them and in addition to that, I added &ldquo;Everything&rdquo; and &ldquo;Nothing&rdquo; as I had noticed that many reviewers tend to use these keywords in both parts of their review.<br>
+In the end, I had 10 keywords (4 for positive reviews, 4 for negative reviews, &ldquo;Everything&rdquo; and &ldquo;Nothing&rdquo;) and 12 new columns, respectively. For instance one new column would be something like &ldquo;&ldquo;Good location&rdquo; mentioned in positive review&rdquo;. 
+As you could tell, these columns were either 1 or 0 and this actual example also incorporated words such as &ldquo;perfect&rdquo; or &ldquo;excellent&rdquo; in addition to location.<br>
+The result of all this was the following graph for positive reviews:</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/positive%20reviews.png"/> 
+</figure>
+
+<p>As we can see, staff was very important to the reviewers. Apart from that, putting &ldquo;nothing&rdquo; in their negative review or &ldquo;everything&rdquo; in their positive review usually led to higher scores (which was quite expected).</p>
+<p>The following chart shows the results for negative reviews:</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/negative%20reviews.png"/> 
+</figure>
+
+<p>As we can see, all the keywords in negative reviews have quite massive impact. The occurrence (or absence, respectively) of a certain word in a reviewers negative review means a difference of up to 2 score points on average, which is huge.</p>
+<h3 id="correlation-and-predictions">Correlation and predictions</h3>
+<p>Last but not least was the inspection of correlation. In the following picture you can see the correlation vector for reviewer score. It shows the 10 most impactful features (or rather the 10 with highest correlation, to be correct).
+We can see that the ratio of lengths of positive and negative review parts was the most correlated one.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/correlation.png"/> 
+</figure>
+
+<p>Multiple regression algorithms were used to try and predict the reviewer score. Linear regression and Random forest regressor both did quite well, however, they were outperformed by the Histogram gradient boosting regressor with the root of mean squared error at 0.728.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/histgradboosting.PNG"/> <figcaption>
+            <h4>Implementation of the Histogram gradient boosting regressor as well as its results</h4>
+        </figcaption>
+</figure>
+
+<h2 id="hypotheses-after-examination">Hypotheses after examination</h2>
+<ul>
+<li>Length of negative (positive) reviews did have an impact; a feature of their mutual ratio has been engineered.</li>
+<li>Date of each review was not impactful, however in some months the individual hotels show similar review average pattern.</li>
+<li>Reviewer Nationality seemed impactful, nevertheless it is hard to say whether the reviewers from some countries tend to rate better in general or just pick better hotels.</li>
+<li>On average, there was not much of a difference between the individual hotel countries. However, some countries performed much better in terms of the extreme cases (top and worst 50 hotels).</li>
+<li>Apart from the increased number of reviewers, there is no correlation betweeen reviewer score and corresponding country of the reviewer and his or her hotel.</li>
+<li>Certain keywords in both negative and positive review have had a meaningful impact on the reviewer score, e.g. &ldquo;air conditioning&rdquo; or &ldquo;nothing&rdquo; in reviewers negative review.</li>
+<li>Specific features have been extracted from tags of each review; these features have been shown to have some effect on the reviewer score.</li>
+</ul>
+<h2 id="possible-next-steps">Possible next steps</h2>
+<ul>
+<li>Re-shaping the target variable into ordinal categorical one; this would allow me to inspect the data in terms of multivariate classification.</li>
+<li>Analysing the data from the perspective of clustering; that would enable us to dive deep into the reviewers, their demands and behaviour; this may have a massive impact on the business applicability of the project</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://github.com/t-ded/DA-hotel_reviews_project">Link to project´s repository on GitHub</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/data-science" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data Science</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/regression" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Regression</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/visualisation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Visualisation</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/machine-learning" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Machine Learning</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-moon-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://t-ded.github.io/t-ded-portfolio/" >
+    &copy;  Data Science Portfolio 2020 
+  </a>
+    <div>
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://t-ded.github.io/t-ded-portfolio/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
