@@ -1,2 +1,2 @@
 # t-ded-portfolio
-Data science portfolio/blog
+https://t-ded.github.io/t-ded-portfolio/
