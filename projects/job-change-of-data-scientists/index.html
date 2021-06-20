@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 2 Overview: Recruitment process of a Data Science company (Classification task) | Data Science Portfolio</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://t-ded.github.io/t-ded-portfolio/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 2 Overview: Recruitment process of a Data Science company (Classification task)" />
+<meta property="og:description" content="Analysis of the factors influencing the decicision to pursue a job in a data science company" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/" />
+<meta property="article:published_time" content="2021-06-19T15:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-19T15:00:00+00:00" />
+<meta itemprop="name" content="Project 2 Overview: Recruitment process of a Data Science company (Classification task)">
+<meta itemprop="description" content="Analysis of the factors influencing the decicision to pursue a job in a data science company">
+<meta itemprop="datePublished" content="2021-06-19T15:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-19T15:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3029">
+
+
+
+<meta itemprop="keywords" content="Python,Data Science,Classification,Visualisation,Machine Learning,Programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 2 Overview: Recruitment process of a Data Science company (Classification task)"/>
+<meta name="twitter:description" content="Analysis of the factors influencing the decicision to pursue a job in a data science company"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Training%20hours%20based%20on%20education%20level.PNG');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://t-ded.github.io/t-ded-portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Data Science Portfolio
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/about/" title="About me page">
+              About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 2 Overview: Recruitment process of a Data Science company (Classification task)</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Analysis of the factors influencing the decicision to pursue a job in a data science company
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/&amp;text=Project%202%20Overview:%20Recruitment%20process%20of%20a%20Data%20Science%20company%20%28Classification%20task%29" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/&amp;title=Project%202%20Overview:%20Recruitment%20process%20of%20a%20Data%20Science%20company%20%28Classification%20task%29" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 2 Overview: Recruitment process of a Data Science company (Classification task)</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-06-19T15:00:00Z">June 19, 2021</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 15 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 3029 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="analysis-of-more-than-19-thousand-recruits-of-a-data-science-company---project-overviewhttpsgithubcomt-dedda-job_change_project"><a href="https://github.com/t-ded/DA-job_change_project">Analysis of more than 19 thousand recruits of a data science company - Project Overview:</a></h1>
+<h2 id="project-summary">Project Summary</h2>
+<ul>
+<li>Comprehensively <strong>explored and visualized</strong> the data, followed up by predicting the target variable with <strong>accuracy of 0.73</strong>.</li>
+<li><strong>Engineered thousands of missing values</strong> based on the expected probability distribution of the feature.</li>
+<li>Implemented Classification Histogram Gradient Boosting, Logistic Regression, and Random Forest algorithms, extracted <strong>feature importance and performed feature selection</strong>.</li>
+<li>My findings might have a <strong>huge impact on the average time and money cost of new employees</strong> if implemented correctly into the recruiting system of a company in DS field.</li>
+<li>In the future, the binary target variable may be switched for the continuous number of training hours, enabling me to try regression algorithms.</li>
+<li>Also, a <strong>clustering analysis</strong> may be performed onto the recruits, giving us even more precious insight into the fundamentals. This would also improve the data engineering.</li>
+</ul>
+<h2 id="project-background">Project Background</h2>
+<p>This dataset has been chosen as it revolves around a field I see my future in. The main perk of this dataset is that it presents an opportunity for meaningful business implementation. The outcomes of this analysis can be effectively applied in any related company, resulting in making the recruitment process extremely effective, which then greatly reduces time and money costs spent on each candidate.
+The <a href="https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists?fbclid=IwAR2jKFzfv2xK7Uj8FQfnSHEicbpMFl0yAJHRLBRZfq98Xcy2dEz9W2bZAy8">initial dataset</a> consists of 19 158 reviews and 14 features, one of them being the dependent variable which tells us, whether or not the person is going to change their job and pursue career in the data science company. The test set then includes another 2 129 entries to be predicted.
+For this project, EDA, visualisation and data interpretation have been given priority over algorithms as it seemed to me that for this particular dataset, it would be much easier to actually implement the results in the form of graphs, charts and plots into business, rather than estimator predictions and their coefficients.</p>
+<h2 id="project-outline">Project Outline</h2>
+<ul>
+<li>State the initial hypotheses</li>
+<li>Make necessary imports, take first look at the dataset, identify variables</li>
+<li>Engineer missing data in both continuous and categorical columns</li>
+<li>Univariate analysis</li>
+<li>Multivariate analysis (mainly in relation to training hours)</li>
+<li>Multivariate analysis in relation to target variable</li>
+<li>Correlation inspection</li>
+<li>Model set-up, skewness handling</li>
+<li>Model implementation</li>
+</ul>
+<h2 id="initial-hypotheses-and-notes">Initial Hypotheses and Notes</h2>
+<ul>
+<li>
+<p>Trainees with more trained hours who do not enroll in the end are extremely costly</p>
+<ul>
+<li>Training hours is almost as important as the target variable</li>
+</ul>
+</li>
+<li>
+<p>City column in excessive since city development index holds much more information</p>
+</li>
+<li>
+<p>City development index may be positively correlated with target variable and relevant experience as Data Science is a rather modern field</p>
+</li>
+<li>
+<p>Gender may be correlated to target variable and relevant experience</p>
+<ul>
+<li>Are genders equal in the field of data science?</li>
+</ul>
+</li>
+<li>
+<p>Relevant experience should have a huge impact on both training hours and target variable</p>
+<ul>
+<li>Same might go for general experience</li>
+</ul>
+</li>
+<li>
+<p>People with STEM Major may be more likely to pursue career in the data science field</p>
+</li>
+<li>
+<p>People with higher education level are likely to require less training hours</p>
+</li>
+<li>
+<p>Training hours and target are unlikely to be very correlated</p>
+</li>
+<li>
+<p>Note: Among the features of the dataset are many variables whose analysis could be very interesting but
+would not be related to the purpose of this project (such examples include gender vs. enrolled university etc.)</p>
+</li>
+</ul>
+<h2 id="analysis-breakdown">Analysis breakdown</h2>
+<h3 id="first-steps">First steps</h3>
+<p>This analysis began as every other data science project - import ordinary libraries such as pandas, numpy, matplotlib and seaborn, then follow with importing some more specific parts of sklearn. Further on, I have also added RandomOverSampler from imblearn over sampling library, which was my first encounter with this very useful tool.
+After some first looks (using typical pandas functions such as info, describe, head etc.), it became evident, that the dataset will require a lot of work related to data cleaning.
+In the picture below, you can find the initial look at the dataset (after dropping the column containing the ID of each recruit as this one did not contain any valuable information).</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/initial_dfinfo_jobchange.PNG"/> <figcaption>
+            <h4>The initial look at the dataset</h4>
+        </figcaption>
+</figure>
+
+<p>And in the next picture, you can see some of my notes regarding the individual variables.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/initial_var_identification.PNG"/> <figcaption>
+            <h4>This is the introductory variable breakdown</h4>
+        </figcaption>
+</figure>
+
+<h3 id="data-engineering">Data engineering</h3>
+<p>As mentioned above, this dataset was going to require a bigger amount of data engineering and cleaning than some other datasets. 
+First of all, after few initial glances at the dataset, some columns seemed to be excessive. I have already spoken about dropping the ID column. Apart from this, I have dropped the city column since the city development index was providing way more information, and also the enrolled university column, as the entries of this one could have been filled from other columns.</p>
+<p>Next up, the columns containing experience, previous company size and years passed from entering last new job were continous variables, however they have been given in sub-categorical forms (including entries as &ldquo;&lt;1&rdquo;, &ldquo;&gt;20&rdquo; or ranges such as &ldquo;10-49&rdquo; in case of company size).
+I have decided that the data needs to be transformed to continuous and for this purpose, I have chosen the distributional approach. This seemed convenient, since (in my opinion) the features showcased some very key indicators for this approach - from my point of view, it is very likely that the rate of people with more than 20 years fo experience will fall exponentially to some number around 40.
+This was not sufficiently backed by some data and therefore adds a considerable amount of bias to the dataset, implementing my personal opinion and real-world experience into it.
+According to similar reasoning, data within ranges in company size column have been filled uniformly.
+In the following picture, we can see the function I have used to fill the company size column. The code could be made more eye-pleasingly and mainly could be few rows shorter and way more elegant, however, the function was a serve-purpose one and therefore I have not given it that much consideration.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/exp_d_c_size_function.PNG"/> <figcaption>
+            <h4>The function used to fill the company size column</h4>
+        </figcaption>
+</figure>
+
+<p>The next step was dealing with missing data. Once again, a form of distributional approach has been chosen and the decision has been made to preserve the distributions of the variables. This means that the entries were randomly filled accordingly to the distribution of the non-missing entries. For instance, if there had been 50 % men and 50 % women among the filled entries, then the missing values in this column would be randomly filled in 1:1 ratio. 
+This approach did not really impact our EDA, however, it should greatly impact the predictions of our models. The question remains, whether this influence or positive or negative, since while it did add a lot of values to train on, it might have also erased existing relationships between the data or add new, fake ones. 
+In the picture, you can see the function used to find the distributions as well as the function applied to fill the values using pandas apply.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/find_dist_and_fill_cat_functions.PNG"/> <figcaption>
+            <h4>First, we needed to find the distribution, then we could fill the missing values</h4>
+        </figcaption>
+</figure>
+
+<p>The last step took place after all of my EDA, however, in this article it fits more in data engineering chapter. 
+Since the target variable was very unevenly distributed (in around 1:3 ratio in favour of negative answer), the models found it easier to just predict 0 every time or almost every time. 
+Despite this resulting in not that bad accuracy (75 %, not very surprisingly), it was not the way I wanted my models to work and such model probably would not have very wide business implementations.
+Therefore, I have decided to balance the dataset. One of the possible approaches was to just randomly pick only a small part of the negative answers in order to reach 1:1 ratio (under-sample the dataset). 
+I have tested this, however, it did not bring any better results. Therefore, I have decided to experiment a little bit and use RandomOverSampler from the imblearn library. This, once again, added a bit of bias to the dataset.</p>
+<h3 id="univariate-analysis">Univariate analysis</h3>
+<p>The univariate analysis was mostly looking for distributions in the dataset as well as trying to find some patterns in terms of distributions.
+Some of the key takeaways would be that the recruits mostly stated to have relevant experience in the field, there were more than 90 % of men among the people and the recruits mostly required between 10 to 30 training hours.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/training_hours.png"/> <figcaption>
+            <h4>Histogram of training hours</h4>
+        </figcaption>
+</figure>
+
+<h3 id="bivariate-analysis-excluding-target">Bivariate analysis excluding target</h3>
+<p>The next step was to analyse patterns in pairs of features. I have started without the target variable first and found some quite interesting insights.</p>
+<p>First of all, there was a quite big difference in city development index between with and without relevant experience. This had been expected in my initial hypotheses and is not very surprising</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_cdi.png"/> <figcaption>
+            <h4>Relation between city development index and relevant experience</h4>
+        </figcaption>
+</figure>
+
+<p>Speaking of relevant experience, I have also taken a look at it&rsquo;s relations with gender and number of training hours. 
+There was very little correlation with gender (men were a tiny bit more likely to have a relevant experience, the Other gender cannot be justly considered, since the sample of recruits with such answer was too small).
+However, what seemed quite surprising to me, was the small negative correlation of relevant experience and training hours, as the people with relvant experience seemed to require more training hours. This was contrary to my initial hypothesis regarding this pair. One of the possible explanations would be that people with relevant experience are less willing to jump into the job (due to various reasons related to job specifications).
+We can see both of these insights in the following pictures.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_gender.png"/> <figcaption>
+            <h4>Relation between gender and relevant experience</h4>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_training_hours.png"/> <figcaption>
+            <h4>Relation between the number of training hours and relevant experience</h4>
+        </figcaption>
+</figure>
+
+<p>Next up were looks into education, the distribution of people among the fields and relation to training hours. The dataset showcased massive preferences towards STEM field and contained mainly participants with Graduate education. 
+The fields once again showed quite the opposite relation to the number of training hours than expected, meaning that the STEM and Business Degree candidates typically required more training hours than Arts or Humanities majors. The most straightforward explanation for this behaviour is that people from unrelated fields found it easier to decide that this (data science or tech in general) is/is not the job for them.
+In general, recruits with relevant experience and PhD education required the most training hours as opposed to people with Primary School education and relevant experience. However, there is once again not enough datapoints in some of the categories to make any justified conclusions.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_education_level_training_hours_groupby.PNG"/> <figcaption>
+            <h4>Relation between the number of training hours, relevant experience and education level</h4>
+        </figcaption>
+</figure>
+
+<h3 id="target-analysis">Target analysis</h3>
+<p>As I have already mentioned, the distribution of the target variable - whether or not the candidate decided to change the job and join the company - was very imbalanced.
+In regards to analysis of relations of other features, there were some very interesting outcomes, the first one being the meaningful negative correlation between city development index and target. The people from lowly developed cities were much more likely to look for a job in the company. This may, for instance, be due to the job being attractive in terms of wage or innovation.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/cdi_target.png"/> <figcaption>
+            <h4>Relation between the city development index and the target variable</h4>
+        </figcaption>
+</figure>
+
+<p>In terms of gender, there was no significant relation, the link actually seemed very similar to the relationship between gender and relevant experience.</p>
+<p>One of the contra-intuitive insights was that people with relevant experience very much less likely to look for a job in the company. Possible explanation is that people who are used to the field are more likely to know, whether the terms and conditions of the job are appropriate or not.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_target.png"/> <figcaption>
+            <h4>Percentage of people looking for a job change based on relevant experience</h4>
+        </figcaption>
+</figure>
+
+<p>From the education&rsquo;s point of view, the participants with Graduate background were by far the most likely to pursue job in the company. On the other hand, people with Primary School were the least likely ones. Going into more details, recruits with Business Degree and STEM majors were usually the ones looking for a job change, which is not very surprising. 
+In terms of previous company, the recruits did not have any highly visible preferences, however, people from early stage startups were quite a bit more likely to change their job than people working in funded startups. This does not seem very surprising as working in early stage startups is a lot riskier and may not fit within the expectations of many people.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/company_type_target_groupby.PNG"/> <figcaption>
+            <h4>Density of people looking for a new job based on the type of their previous company</h4>
+        </figcaption>
+</figure>
+
+<h3 id="correlation-analysis">Correlation analysis</h3>
+<p>The next step was inspecting the correlations amongst the variables. The following table has been created before adding dummy variables in places of categorical variables in order to preserve some clarity. 
+The table basically sums up what we have already shown, the only new insight being the negative insight between general experience and target variable. A simple explanation for this is that people who have been working for more years are in general less willing to change their job and they can also assess the conditions of the job much better.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/correlation_table.png"/> <figcaption>
+            <h4>Correlation of continuous features and the target variable</h4>
+        </figcaption>
+</figure>
+
+<h3 id="model-creation">Model creation</h3>
+<p>The last part of this analysis played out in the field of machine learning. 
+The first step was the already mentioned creation of the dummy variables in places of the categorical features. 
+Regarding the continuous variables, most of them had been hugely skewed towards one or the other side.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/skewness.PNG"/> <figcaption>
+            <h4>Skew of the continuous variables</h4>
+        </figcaption>
+</figure>
+
+<p>Therefore, I have decided to somewhat transform these in order to help the models in their job as much as possible. You can see the result for training hours in the following picture</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/training_hours_transformation.png"/> <figcaption>
+            <h4>How the feature of training hours looked before and after this transformation process</h4>
+        </figcaption>
+</figure>
+
+<p>In terms of machine learning models, few of the most common classification algorithms have been tried with their performance being assessed using confusion matrices. 
+Based on logistic regression coefficients and random forest feature importance, I created two new datasets containing only selected features. The dataset based on logistic regression proved as the most valuable one for all the other models expect random forest, which appraised it&rsquo;s own dataset (based on feature importance) the most.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/rf_feature_importance.PNG"/> <figcaption>
+            <h4>Snippet of the most important features for the random forest</h4>
+        </figcaption>
+</figure>
+
+<p>Apart from these two, I have tried a few other classifying machine learning algorithms, including K-nearest neighbors and Support vector machine (for which hyperparameters have been tuned) and Histogram gradient boosting.</p>
+<p>Since I have chosen the approach of over-sampling and did not leave the imbalances in the target variable, I could have used accuracy to evaluate the models. Random forest and Histogram gradient boosting have proven to be the most effective ones in terms of accuracy. 
+None of the models managed to beat the baseline of always picking the negative answer for the original (not over-sampled) dataset. However, this cannot really be considered a failure, since accuracy is not a legitimate metric for such an imbalanced dataset and with balanced dataset, the accuracy of such model would be 50 %, so all the models would be better than that.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/models_accuracy.PNG"/> <figcaption>
+            <h4>Accuracy of the individual models</h4>
+        </figcaption>
+</figure>
+
+<h2 id="hypotheses-after-examination">Hypotheses after examination</h2>
+<ul>
+<li>City development does have positive correlation with relevant experience but is actually negatively correlated to the target variable</li>
+<li>Males are just a tiny bit more likely to have relevant experience and actually little less likely to become employees in the end</li>
+<li>People with relevant experience are way less likely to become employees in the end and require more training hours on average</li>
+<li>There is no clear relation between general experience and training hours, however, people with less experience are more likely to change the job</li>
+<li>The company is by far the most likely to succeed withing recruits with Graduate education level and least likely to employ a recruit with only Primary School</li>
+<li>Among people with Graduate education level, recruits with majors of Other, STEM and Business Degree are the ones to look for from the perspective of a company</li>
+<li>There is no significant impact of education on the number of training hours</li>
+<li>There is almost zero correlation between training hours and the target variable</li>
+</ul>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>Despite the accuracies of the models not being very competitive, I see this as a success. Even with accuracy of a model being just around 73 %, the recruiting process could be made far more effective by implementing the algorithms and even more so by implementing some of the foundings of this analysis.
+Being in the lead of the company or the recruitment process, you could take extremely valuable insights from this project, resulting in massive time and money savings.</p>
+<p>In terms of training hours, candidates with no relevant experience and with non-tech background education seem to be the best ones.
+However, taking the target variable into consideration, we can say that it is best to try participants from tech-based universities and idella ones who have are not currently working in a funded startup.
+What these two variables have in common is the negative correlation to relevant experience and this feature is quite strongly positively related to the city development index.</p>
+<p>From the data we can conclude that an ideal candidate would be such that has Graduate education from a tech-based university and has been working in a new-found startup. The person should also have zero relevant experience, which can be predicted with high probability by recruiting people from less developed cities.</p>
+<h2 id="possible-next-steps">Possible next steps</h2>
+<ul>
+<li>Automate the model creation/selection process</li>
+<li>Select the features much more carefully</li>
+<li>Pay more attention to model hyperparameters tuning</li>
+<li>Under some dubious assumptions and data from the internet we could add few features that the company did not collect
+<ul>
+<li>These would be for instance age, years of relevant experience</li>
+</ul>
+</li>
+<li>Fill the missing data based on clustering algorithms rather than randomness and distributions</li>
+<li>Change the target variable to training hours and try to predict this value for each participant
+<ul>
+<li>A new value based on both of these columns could be created (one that would consider that recruits with most training hours who do not change their job are extra-costly)</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://github.com/t-ded/DA-job_change_project">Link to project´s repository on GitHub</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/data-science" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data Science</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/classification" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Classification</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/visualisation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Visualisation</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/machine-learning" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Machine Learning</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/">Project 1 Overview: Analysis of hotel reviews (Regression task)</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-moon-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://t-ded.github.io/t-ded-portfolio/" >
+    &copy;  Data Science Portfolio 2021 
+  </a>
+    <div>
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://t-ded.github.io/t-ded-portfolio/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
