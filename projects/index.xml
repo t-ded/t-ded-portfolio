@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)</title>
+      <link>https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/</link>
+      <pubDate>Tue, 13 Jul 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/</guid>
+      <description>Analysis of more than 38 000 used cars and prediction of their price - Project Overview: Project Summary  Very complex exploration and visualization of the data, followed up by prediction of the target variable with R squared &amp;amp; adjusted R squared of 0.926 &amp;amp; 0.92. Implementation of Histogram Gradient Boosting algorithm as well as Linear Regression, including checks and violation-solutions of 4 key assumptions of linear regression. This analysis might bring a very strong use case, especially to an average person who would like to sell their car, but also to a company or a car market.</description>
+    </item>
+    
+    <item>
       <title>Project 2 Overview: Recruitment process of a Data Science company (Classification task)</title>
       <link>https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/</link>
       <pubDate>Sat, 19 Jun 2021 15:00:00 +0000</pubDate>

@@ -55,7 +55,7 @@
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Training%20hours%20based%20on%20education%20level.PNG');">
+  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/Training%20hours%20based%20on%20education%20level.PNG');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -73,6 +73,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/about/" title="About me page">
               About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/post/" title="Articles page">
+              Articles
             </a>
           </li>
           
@@ -265,14 +271,14 @@ would not be related to the purpose of this project (such examples include gende
 After some first looks (using typical pandas functions such as info, describe, head etc.), it became evident, that the dataset will require a lot of work related to data cleaning.
 In the picture below, you can find the initial look at the dataset (after dropping the column containing the ID of each recruit as this one did not contain any valuable information).</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/initial_dfinfo_jobchange.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/initial_dfinfo_jobchange.PNG"/> <figcaption>
             <h4>The initial look at the dataset</h4>
         </figcaption>
 </figure>
 
 <p>And in the next picture, you can see some of my notes regarding the individual variables.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/initial_var_identification.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/initial_var_identification.PNG"/> <figcaption>
             <h4>This is the introductory variable breakdown</h4>
         </figcaption>
 </figure>
@@ -286,7 +292,7 @@ This was not sufficiently backed by some data and therefore adds a considerable 
 According to similar reasoning, data within ranges in company size column have been filled uniformly.
 In the following picture, we can see the function I have used to fill the company size column. The code could be made more eye-pleasingly and mainly could be few rows shorter and way more elegant, however, the function was a serve-purpose one and therefore I have not given it that much consideration.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/exp_d_c_size_function.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/exp_d_c_size_function.PNG"/> <figcaption>
             <h4>The function used to fill the company size column</h4>
         </figcaption>
 </figure>
@@ -295,7 +301,7 @@ In the following picture, we can see the function I have used to fill the compan
 This approach did not really impact our EDA, however, it should greatly impact the predictions of our models. The question remains, whether this influence or positive or negative, since while it did add a lot of values to train on, it might have also erased existing relationships between the data or add new, fake ones. 
 In the picture, you can see the function used to find the distributions as well as the function applied to fill the values using pandas apply.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/find_dist_and_fill_cat_functions.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/find_dist_and_fill_cat_functions.PNG"/> <figcaption>
             <h4>First, we needed to find the distribution, then we could fill the missing values</h4>
         </figcaption>
 </figure>
@@ -309,7 +315,7 @@ I have tested this, however, it did not bring any better results. Therefore, I h
 <p>The univariate analysis was mostly looking for distributions in the dataset as well as trying to find some patterns in terms of distributions.
 Some of the key takeaways would be that the recruits mostly stated to have relevant experience in the field, there were more than 90 % of men among the people and the recruits mostly required between 10 to 30 training hours.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/training_hours.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/training_hours.png"/> <figcaption>
             <h4>Histogram of training hours</h4>
         </figcaption>
 </figure>
@@ -318,7 +324,7 @@ Some of the key takeaways would be that the recruits mostly stated to have relev
 <p>The next step was to analyse patterns in pairs of features. I have started without the target variable first and found some quite interesting insights.</p>
 <p>First of all, there was a quite big difference in city development index between with and without relevant experience. This had been expected in my initial hypotheses and is not very surprising</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_cdi.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/relevant_experience_cdi.png"/> <figcaption>
             <h4>Relation between city development index and relevant experience</h4>
         </figcaption>
 </figure>
@@ -328,13 +334,13 @@ There was very little correlation with gender (men were a tiny bit more likely t
 However, what seemed quite surprising to me, was the small negative correlation of relevant experience and training hours, as the people with relvant experience seemed to require more training hours. This was contrary to my initial hypothesis regarding this pair. One of the possible explanations would be that people with relevant experience are less willing to jump into the job (due to various reasons related to job specifications).
 We can see both of these insights in the following pictures.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_gender.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/relevant_experience_gender.png"/> <figcaption>
             <h4>Relation between gender and relevant experience</h4>
         </figcaption>
 </figure>
 
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_training_hours.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/relevant_experience_training_hours.png"/> <figcaption>
             <h4>Relation between the number of training hours and relevant experience</h4>
         </figcaption>
 </figure>
@@ -343,7 +349,7 @@ We can see both of these insights in the following pictures.</p>
 The fields once again showed quite the opposite relation to the number of training hours than expected, meaning that the STEM and Business Degree candidates typically required more training hours than Arts or Humanities majors. The most straightforward explanation for this behaviour is that people from unrelated fields found it easier to decide that this (data science or tech in general) is/is not the job for them.
 In general, recruits with relevant experience and PhD education required the most training hours as opposed to people with Primary School education and relevant experience. However, there is once again not enough datapoints in some of the categories to make any justified conclusions.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_education_level_training_hours_groupby.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/relevant_experience_education_level_training_hours_groupby.PNG"/> <figcaption>
             <h4>Relation between the number of training hours, relevant experience and education level</h4>
         </figcaption>
 </figure>
@@ -352,7 +358,7 @@ In general, recruits with relevant experience and PhD education required the mos
 <p>As I have already mentioned, the distribution of the target variable - whether or not the candidate decided to change the job and join the company - was very imbalanced.
 In regards to analysis of relations of other features, there were some very interesting outcomes, the first one being the meaningful negative correlation between city development index and target. The people from lowly developed cities were much more likely to look for a job in the company. This may, for instance, be due to the job being attractive in terms of wage or innovation.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/cdi_target.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/cdi_target.png"/> <figcaption>
             <h4>Relation between the city development index and the target variable</h4>
         </figcaption>
 </figure>
@@ -360,7 +366,7 @@ In regards to analysis of relations of other features, there were some very inte
 <p>In terms of gender, there was no significant relation, the link actually seemed very similar to the relationship between gender and relevant experience.</p>
 <p>One of the contra-intuitive insights was that people with relevant experience very much less likely to look for a job in the company. Possible explanation is that people who are used to the field are more likely to know, whether the terms and conditions of the job are appropriate or not.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/relevant_experience_target.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/relevant_experience_target.png"/> <figcaption>
             <h4>Percentage of people looking for a job change based on relevant experience</h4>
         </figcaption>
 </figure>
@@ -368,7 +374,7 @@ In regards to analysis of relations of other features, there were some very inte
 <p>From the education&rsquo;s point of view, the participants with Graduate background were by far the most likely to pursue job in the company. On the other hand, people with Primary School were the least likely ones. Going into more details, recruits with Business Degree and STEM majors were usually the ones looking for a job change, which is not very surprising. 
 In terms of previous company, the recruits did not have any highly visible preferences, however, people from early stage startups were quite a bit more likely to change their job than people working in funded startups. This does not seem very surprising as working in early stage startups is a lot riskier and may not fit within the expectations of many people.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/company_type_target_groupby.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/company_type_target_groupby.PNG"/> <figcaption>
             <h4>Density of people looking for a new job based on the type of their previous company</h4>
         </figcaption>
 </figure>
@@ -377,7 +383,7 @@ In terms of previous company, the recruits did not have any highly visible prefe
 <p>The next step was inspecting the correlations amongst the variables. The following table has been created before adding dummy variables in places of categorical variables in order to preserve some clarity. 
 The table basically sums up what we have already shown, the only new insight being the negative insight between general experience and target variable. A simple explanation for this is that people who have been working for more years are in general less willing to change their job and they can also assess the conditions of the job much better.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/correlation_table.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/correlation_table.png"/> <figcaption>
             <h4>Correlation of continuous features and the target variable</h4>
         </figcaption>
 </figure>
@@ -387,14 +393,14 @@ The table basically sums up what we have already shown, the only new insight bei
 The first step was the already mentioned creation of the dummy variables in places of the categorical features. 
 Regarding the continuous variables, most of them had been hugely skewed towards one or the other side.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/skewness.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/skewness.PNG"/> <figcaption>
             <h4>Skew of the continuous variables</h4>
         </figcaption>
 </figure>
 
 <p>Therefore, I have decided to somewhat transform these in order to help the models in their job as much as possible. You can see the result for training hours in the following picture</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/training_hours_transformation.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/training_hours_transformation.png"/> <figcaption>
             <h4>How the feature of training hours looked before and after this transformation process</h4>
         </figcaption>
 </figure>
@@ -402,7 +408,7 @@ Regarding the continuous variables, most of them had been hugely skewed towards 
 <p>In terms of machine learning models, few of the most common classification algorithms have been tried with their performance being assessed using confusion matrices. 
 Based on logistic regression coefficients and random forest feature importance, I created two new datasets containing only selected features. The dataset based on logistic regression proved as the most valuable one for all the other models expect random forest, which appraised it&rsquo;s own dataset (based on feature importance) the most.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/rf_feature_importance.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/rf_feature_importance.PNG"/> <figcaption>
             <h4>Snippet of the most important features for the random forest</h4>
         </figcaption>
 </figure>
@@ -411,7 +417,7 @@ Based on logistic regression coefficients and random forest feature importance, 
 <p>Since I have chosen the approach of over-sampling and did not leave the imbalances in the target variable, I could have used accuracy to evaluate the models. Random forest and Histogram gradient boosting have proven to be the most effective ones in terms of accuracy. 
 None of the models managed to beat the baseline of always picking the negative answer for the original (not over-sampled) dataset. However, this cannot really be considered a failure, since accuracy is not a legitimate metric for such an imbalanced dataset and with balanced dataset, the accuracy of such model would be 50 %, so all the models would be better than that.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/models_accuracy.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Data%20scientists/models_accuracy.PNG"/> <figcaption>
             <h4>Accuracy of the individual models</h4>
         </figcaption>
 </figure>

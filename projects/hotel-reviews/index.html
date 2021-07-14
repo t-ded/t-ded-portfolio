@@ -55,7 +55,7 @@
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Comparison%20of%20evolution%20of%20reviews%20over%20time%20for%20chosen%20hotels.png');">
+  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/Comparison%20of%20evolution%20of%20reviews%20over%20time%20for%20chosen%20hotels.png');">
     <div class="pb3-m pb6-l bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
@@ -73,6 +73,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/about/" title="About me page">
               About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/post/" title="Articles page">
+              Articles
             </a>
           </li>
           
@@ -240,7 +246,7 @@ Next up were some common initial steps and first glances at the dataset. This wa
 After few looks, I found out that the country and the city of each hotel are easily accessible from the hotel address column. Nevertheless, it occurred to me, that each country is represented only by one city, therefore the city column was meaningless and was dropped in addition to other columns, such as the hotel address, lattitude or longitude.<br>
 In the picture, you can see how my dataset looked like after these first steps. The data contained zero missing values, which made the initial data cleaning a lot easier, than it would be in most real-life tasks.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/initial_dfinfo.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/initial_dfinfo.PNG"/> <figcaption>
             <h4>This is what the dataframe looked like after the initial steps</h4>
         </figcaption>
 </figure>
@@ -249,7 +255,7 @@ In the picture, you can see how my dataset looked like after these first steps. 
 <p>The next step was analysis from the perspective of countries, both country of the hotel and country of each reviewer.<br>
 However, there was a massive amount of unique countries in the reviewer country column. Therefore, I have decided to only look at the most frequent ones. For this purpose, I have created two functions; one allowed me to drop countries with value counts below a given threshold. The second one enabled me to only look at n most frequent countries.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/more_most_frequent.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/more_most_frequent.PNG"/> <figcaption>
             <h4>Functions to keep only more frequent values than x or the n most frequent values</h4>
         </figcaption>
 </figure>
@@ -259,7 +265,7 @@ The United Kingdom was by far the most visited country as well as the country wi
 I also found out that the country of each reviewer mattered quite a lot (as opposed to the country of each hotel) as there was a difference of more than one whole review point between the USA (country with the most positive feedback) and Iran (country with the lowest average review score).</p>
 <p>In the following picture you can see the preferred country for reviewers coming from the 4 most frequent countries. It is not very surprising that people from the UK are far more likely to visit the UK than the other 5 countries.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/Most%20visited%20countries%20based%20on%20the%20nationality%20of%20reviewers.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/Most%20visited%20countries%20based%20on%20the%20nationality%20of%20reviewers.png"/> <figcaption>
             <h4>Most visited countries based on the nationality of reviewers</h4>
         </figcaption>
 </figure>
@@ -269,7 +275,7 @@ I also found out that the country of each reviewer mattered quite a lot (as oppo
 <p>After the country analysis I went on to analyse the hotels individually based on their name. That way, I found out, that hotel &ldquo;Ritz Paris&rdquo; is the best European hotel with the average score of 9.8, while &ldquo;Hotel Liberty&rdquo; is the worst one with 5.2.</p>
 <p>This analysis led me to a very interesting idea of examining the extremes and their relation to the country of each hotel. This enabled me to compare the individual countries based on their occurrence in the top 50 or worst 50 (using the overall country distribution to see the differences).</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/Top%20worst%2050.png" height="210"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/Top%20worst%2050.png" height="210"/> <figcaption>
             <h4>How does country distribution change if we only take a look at the best and worst 50 hotels?</h4>
         </figcaption>
 </figure>
@@ -280,7 +286,7 @@ I also found out that the country of each reviewer mattered quite a lot (as oppo
 That way, I obtained way less &ldquo;spiky&rdquo; chart.</p>
 <p>After I had created the function for the individual hotels, I realised that it would be great to be able to compare the score evolution for different hotels in time. I adapted the function a little and the result enabled me to enter a list of 5 different hotel names to compare.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/Time%20evolution%20of%20the%20worst%20five%20hotels.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/Time%20evolution%20of%20the%20worst%20five%20hotels.png"/> <figcaption>
             <h4>Time evolution of the reviews for the worst five hotels</h4>
         </figcaption>
 </figure>
@@ -291,7 +297,7 @@ That way, I obtained way less &ldquo;spiky&rdquo; chart.</p>
 <p>As it came out, whether or not the person took a pet or was on a business trip rather than a vacation did not matter as much. However, the insight into the combination of travel group and length of stay and their combined effect on the average rating was quite interesting.
 (Note: The 2 highest average scores, both in &ldquo;Travelers with friends&rdquo;, namely 10-15 and 15+ days, both had only 1 or 2 occurrences, therefore cannot be considered of any value.)</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/Average%20rating%20of%20a%20hotel%20based%20on%20the%20length%20of%20stay%20and%20travelling%20group.png"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/Average%20rating%20of%20a%20hotel%20based%20on%20the%20length%20of%20stay%20and%20travelling%20group.png"/> <figcaption>
             <h4>Average rating of a hotel based on the length of stay and travelling group</h4>
         </figcaption>
 </figure>
@@ -302,7 +308,7 @@ That way, I obtained way less &ldquo;spiky&rdquo; chart.</p>
 This enabled me to examine these individually and as it turned out, that was quite an important step, as each part (positive and negative) had its keywords. Apart from that, the number of words in each part (or their ratio) was a very interesting measure.</p>
 <p>As the length of these parts was a predefined feature, it felt only natural to start with the inspection of that. In the following picture you may see the relation between the average score of a hotel and the average length of its positive and negative reviews.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/avg%20score%20based%20on%20avg%20length%20of%20posneg%20word%20counts.png"/> 
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/avg%20score%20based%20on%20avg%20length%20of%20posneg%20word%20counts.png"/> 
 </figure>
 
 <p>After this step, the actual text analysis could start. Using CountVectorizer function from the sklearn package, I managed to find the most impactful keywords of both positive and negative reviews.<br>
@@ -311,13 +317,13 @@ In the end, I had 10 keywords (4 for positive reviews, 4 for negative reviews, &
 As you could tell, these columns were either 1 or 0 and this actual example also incorporated words such as &ldquo;perfect&rdquo; or &ldquo;excellent&rdquo; in addition to location.<br>
 The result of all this was the following graph for positive reviews:</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/positive%20reviews.png"/> 
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/positive%20reviews.png"/> 
 </figure>
 
 <p>As we can see, staff was very important to the reviewers. Apart from that, putting &ldquo;nothing&rdquo; in their negative review or &ldquo;everything&rdquo; in their positive review usually led to higher scores (which was quite expected).</p>
 <p>The following chart shows the results for negative reviews:</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/negative%20reviews.png"/> 
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/negative%20reviews.png"/> 
 </figure>
 
 <p>As we can see, all the keywords in negative reviews have quite massive impact. The occurrence (or absence, respectively) of a certain word in a reviewers negative review means a difference of up to 2 score points on average, which is huge.</p>
@@ -325,12 +331,12 @@ The result of all this was the following graph for positive reviews:</p>
 <p>Last but not least was the inspection of correlation. In the following picture you can see the correlation vector for reviewer score. It shows the 10 most impactful features (or rather the 10 with highest correlation, to be correct).
 We can see that the ratio of lengths of positive and negative review parts was the most correlated one.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/correlation.png"/> 
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/correlation.png"/> 
 </figure>
 
 <p>Multiple regression algorithms were used to try and predict the reviewer score. Linear regression and Random forest regressor both did quite well, however, they were outperformed by the Histogram gradient boosting regressor with the root of mean squared error at 0.728.</p>
 <figure>
-    <img src="https://t-ded.github.io/t-ded-portfolio/images/histgradboosting.PNG"/> <figcaption>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Hotel%20reviews/histgradboosting.PNG"/> <figcaption>
             <h4>Implementation of the Histogram gradient boosting regressor as well as its results</h4>
         </figcaption>
 </figure>

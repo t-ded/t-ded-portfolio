@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task) | Data Science Portfolio</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://t-ded.github.io/t-ded-portfolio/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)" />
+<meta property="og:description" content="Analysis of price of used cars based on theirs chracteristics" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/" />
+<meta property="article:published_time" content="2021-07-13T21:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-13T21:00:00+00:00" />
+<meta itemprop="name" content="Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)">
+<meta itemprop="description" content="Analysis of price of used cars based on theirs chracteristics">
+<meta itemprop="datePublished" content="2021-07-13T21:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-07-13T21:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3115">
+
+
+
+<meta itemprop="keywords" content="Python,Data Science,Regression,Visualisation,Machine Learning,Programming," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)"/>
+<meta name="twitter:description" content="Analysis of price of used cars based on theirs chracteristics"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/Price%20based%20on%20body%20type%20and%20transmission%20type.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://t-ded.github.io/t-ded-portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Data Science Portfolio
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/about/" title="About me page">
+              About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Analysis of price of used cars based on theirs chracteristics
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/&amp;text=Project%203%20Overview:%20Analysis%20of%20prices%20of%20cars%20offered%20at%20car%20markets%20%28Regression%20task%29" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/&amp;title=Project%203%20Overview:%20Analysis%20of%20prices%20of%20cars%20offered%20at%20car%20markets%20%28Regression%20task%29" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-07-13T21:00:00Z">July 13, 2021</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 15 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 3115 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="analysis-of-more-than-38-000-used-cars-and-prediction-of-their-price---project-overviewhttpsgithubcomt-dedda-used_cars_project"><a href="https://github.com/t-ded/DA-used_cars_project">Analysis of more than 38 000 used cars and prediction of their price - Project Overview:</a></h1>
+<h2 id="project-summary">Project Summary</h2>
+<ul>
+<li>Very <strong>complex exploration and visualization</strong> of the data, followed up by prediction of the target variable with <strong>R squared &amp; adjusted R squared of 0.926 &amp; 0.92</strong>.</li>
+<li>Implementation of Histogram Gradient Boosting algorithm as well as Linear Regression, including <strong>checks and violation-solutions of 4 key assumptions of linear regression</strong>.</li>
+<li>This analysis might bring a <strong>very strong use case</strong>, especially to an average person who would like to sell their car, but also to a company or a car market.</li>
+<li>In the future, the project may be extended by adding a <strong>user interface</strong> where the user could input their car and get an estimation of the price based on similar offers.</li>
+<li><strong>Additional data might be scraped off the internet</strong>, including features such as horsepower, trunk capacity or max speed.</li>
+</ul>
+<h2 id="project-background">Project Background</h2>
+<ul>
+<li>This dataset has been chosen for it’s possible strong real life implementations and use cases.</li>
+<li>The <a href="https://www.kaggle.com/lepchenkov/usedcarscatalog">initial dataset</a> contains more than 38 thousand of entries with 30 features, one of them being the dependent price variable.</li>
+<li>For the purpose of this analysis, EDA with visualizations as well as estimation modeling have been given a lot of energy, since a predictive algorithm is where we saw the most use case possible.</li>
+</ul>
+<h2 id="project-outline">Project outline</h2>
+<ul>
+<li>State the initial hypotheses and assumptions, decide for an approach</li>
+<li>Make necessary imports, take first look at the dataset</li>
+<li>Decide how to clean the dataset and engineer some of the missing values</li>
+<li>Analyse the individual distribution of some of the features</li>
+<li>Research the relations of properties of the car and price</li>
+<li>Dive into social analysis - upvotes, duration listed, number of photos and how these relate to price</li>
+<li>Analysis of features feature_0 - feature_9</li>
+<li>Correlation inspection</li>
+<li>Predictive modeling
+<ul>
+<li>Linear Regression - check of 4 key assumptions, feature selection</li>
+<li>Histogram Gradient Boosting</li>
+</ul>
+</li>
+</ul>
+<h2 id="hypotheses-and-notes">Hypotheses and notes</h2>
+<ul>
+<li>
+<p>There will be manufacturers with strong correlation with price (luxurious brands such as Porsche).</p>
+</li>
+<li>
+<p>Odometer value and year of production will be negatively correlated and might be in (anti)correlation with price.</p>
+</li>
+<li>
+<p>State of the car will have strong impact on the car.</p>
+</li>
+<li>
+<p>Some engine fuel types may be in general higher priced than others, same goes for drivetrain types.</p>
+</li>
+<li>
+<p>Location of the market will not be impactful.</p>
+</li>
+<li>
+<p>The presence of all features feature_0 - feature_9 will have positive impact on price.</p>
+</li>
+<li>
+<p>Duration listed may be in positive correlation with price (long lasting offers may be overpriced).</p>
+</li>
+<li>
+<p>Note: The whole project could be approached from a completely different perspective, for instance analysis of car brand/model x location, body types, engine fuels etc.</p>
+</li>
+</ul>
+<h2 id="analysis-breakdown">Analysis breakdown</h2>
+<h3 id="first-steps">First steps</h3>
+<p>Beginnings of this project were no different from ordinary data science tasks - import usual libraries such as pandas, numpy, matplotlib and seaborn, followed by imports of some specific parts of sklearn and statsmodels.
+Using some typical functions of pandas such as describe, head, info etc, we&rsquo;ve come to a conclusion that some of the features can be dropped completely, since information present in these was either irrelevant (is_exchangeable) or excessive (engine_has_gas and engine_type) because of occurrence in some other feature containing more information.
+Brief summary of the dataset after these initial steps can be found in the picture below.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/initial_dfinfo.PNG"/> <figcaption>
+            <h4>The initial look at the dataset</h4>
+        </figcaption>
+</figure>
+
+<p>The next step was analysis of outliers, errors and missing values. After a brief look over the data we have concluded, that except for duration_listed column there are no outliers which we could justifiably drop and not lose any valuable information.
+To be able to drop outliers regarding this column, we have argumented by such offers being most likely overpriced by the seller, which may be the reason for their long listed duration. This would lead to great confusion both during the EDA and modeling. We have dropped entries outside of 3 STDs from mean.
+Apart from this, there were also few entries with price of 1. Speaking from experience, such offers usually present fake price just to drag attention. Therefore, we have dropped such rows, too. However, we kept all similar offers with prices under 10 dollars in the dataset, since we did not have enough data to justifiably drop these too.</p>
+<p>The only missing values in the dataset were present in the engine_capacity column and those were electric vehicles for which this characteristics does not make sense. 
+However, it would be misleading to simply drop these in order to be able to create our models. Therefore, using some internet sources (see the notebook) we have decided to, quite dubiously, speculate on correlation between horsepower and engine capacity of a regular car and then fill engine capacities of our electric models based on their horsepower, which we obtained from the internet.</p>
+<h3 id="univariate-analysis">Univariate analysis</h3>
+<p>The purpose of univariate analysis was to find distributions of the individual features as well as gain some interesting insights regarding the dataset.
+Firstly, we have discovered that the most common car brand was Volkswagen (11 %), followed by Opel and BMW. Among Volkswagen cars, Passat and Golf were the most frequent ones.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/manufacturers%20distribution.png"/> <figcaption>
+            <h4>Fraction of car brands</h4>
+        </figcaption>
+</figure>
+
+<p>Regarding some &ldquo;hard&rdquo; characteristics of the cars, the dataset mostly consisted of cars with mechanical transmission, the most common fuel types were gasoline and diesel and sedan was the most frequent body type.
+The highest part of cars in the dataset was produced between the years of 1995 and 2000, followed by 2000-2005 and 2005-2010, all 3 intervals having around 8 000 entries.
+The cars in the dataset were also most of the time used, only 1 % of all cars was both in emergency and new state. This is in correlation with 99 % of the car not having a warranty anymore.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/body%20type%20distribution.png"/> <figcaption>
+            <h4>Histogram of different body types</h4>
+        </figcaption>
+</figure>
+
+<p>In terms of some social characteristics of the offers, the sellers mostly included between 5 to 10 photos, got 0-10 upvotes and most of the offers were listed for less than 3 months.
+The price column showed heavy falling tendency towards the higher values with prices under 2 500 being the most frequent ones among bins of 2 500.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/prices%20distribution.png"/> <figcaption>
+            <h4>Distribution of car prices among the dataset</h4>
+        </figcaption>
+</figure>
+
+<h3 id="bivariate-and-multivariate-analysis">Bivariate and Multivariate analysis</h3>
+<p>Next up was analysis of pairs or groups of features in order to find out what are the underlying relations. We started by building a simple function that helps us group the dataset by n columns and displays best and worst categories based on mean of a given variable (which was usually price of the car).
+Using this function, we found out, that in terms of mean, the most expensive car brands were Porsche (18 347 USD on average, ranging out from 2 999 to 47 900 USD), Jaguar and Lexus. The bottom part was occupied by Москвич, 3A3 and BA3.
+When we used car model to group as well and dropped entries with count of 1, we found out that many of the most expensive (on average) cars are from the factories of Mercedes-Benz.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/car%20brands%20prices.PNG"/> <figcaption>
+            <h4>Minimum, maximum and average price based on car manufacturer</h4>
+        </figcaption>
+</figure>
+
+<p>One of the interesting insights was the relation of price and colour of the car. Brown cars were on average the most expensive ones with the opposite being green. 
+This may correlate with the most expensive cars (based on mean price) being SUVs and pickups, for whose the brown colour is very usual.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/colour%20and%20price.png"/> <figcaption>
+            <h4>Relationship between colour of a car and it&#39;s price</h4>
+        </figcaption>
+</figure>
+
+<p>Next up was the analysis of the year of production and it&rsquo;s relation to price. We have expected there to be some positive correlation, however, the correlation was actually massive (will be visible later on in correlation chapter) and the chart shows somewhat exponential dependence.
+Apart from this, we have also found out that there is kind of negative linear relation between odometer value and year of production, which had been expected.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/year%20of%20production%20and%20price.png"/> <figcaption>
+            <h4>Exponential relationship of year of production and price</h4>
+        </figcaption>
+</figure>
+
+<p>Regarding the body type and transmission type of each car, automatic transmissions were always priced higher than manual transmissions, which is in high correlation with such cars being produced a lot later on average.
+In terms of body type, we have already noted that SUVs and pickups were priced the highest on average, however, if we separate the dataset by transmission type as well, we find out that the most expensive cars ranked by mean were pickups, cabriolets and minibuses, all with automatic transmission.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/body%20type%20and%20price.png"/> <figcaption>
+            <h4>Price of different body types separated by transmission type</h4>
+        </figcaption>
+</figure>
+
+<p>There were also some interesting findings among features such as state (+ warrancy status), engine fuel type and market location, however, these were mostly influenced by a small sample size and are, therefore, not as relevant.
+In terms of social attributes, neither of number of upvotes and photos seemed to have any meaningful impact on price. Interestingly enough, orange and yellow cars showed to get 3 more upvotes on average than most other car colours.</p>
+<p>The next step was analysis of features feature_0-feature_9. We have decided to dive into these separately, since the information on what kind of feature it is had not been present in the dataset.
+This meant that we cannot really interpret these findings correctly, state initial hypotheses regarding these or perform reality checks along the way. However, analysis of these shall improve our model accuraccy, lessen our bias and also make our analysis more versatile and all-round.</p>
+<p>First off, we have investigated the distribution of each individual feature.
+We have found out that most of the features are more likely to not occur in the car, the exceptions being features 1 and 9.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/features%20distribution.png"/> <figcaption>
+            <h4>Distribution of features feature_0-feature_9</h4>
+        </figcaption>
+</figure>
+
+<p>Following up, we have decided to examine, whether there is some relation between the year of production and presence of these features.
+Excluding feature 0, all of the features were more likely to be present in newer cars with the highest difference of average year of production between a car with and without the feature being feature 7 (more than 8 years of difference). 
+The highest average production year of cars with the feature was within the features 7 and 6 (the year being 2009).</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/features%20years.png"/> <figcaption>
+            <h4>Years of production based on presence/absence of features feature_0-feature_9</h4>
+        </figcaption>
+</figure>
+
+<p>In terms of price relationships, we have found out that presence of features 1-9 had positive impact on price, which was somewhat expected.
+However, feature_0, or it&rsquo;s presence, respectively, had a negative impact on price. We have not been able to find out what this feature might be.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/features%20prices.png"/> <figcaption>
+            <h4>Prices of cars based on presence/absence of features feature_0-feature_9</h4>
+        </figcaption>
+</figure>
+
+<p>To be able to get some more insight about the individual features, we have build a function that tells us which body types are the most and least likely to contatin particular feature.
+From this examination, we have found out that features 1-9 are always least likely to be present in a van and feature 0 always being absent in a limousine. This goes in agreement with the negative impact of feature 0 on price, however, we have not been able to think of a feature that would meet such criteria.
+In terms of presence, features 1-9 (the positive ones) were in general most probable to be present in limousines and SUVs with feature 4 never being absent in a limousine.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/features%20presence.PNG"/> <figcaption>
+            <h4>Presence/absence of features feature_0-feature_9 based on body type</h4>
+        </figcaption>
+</figure>
+
+<h3 id="correlation-analysis">Correlation analysis</h3>
+<p>In the notebook, the reader can find an extensive correlation table including some of the dummy variables. However, it does not really present much more information that we have already found.
+In the picture below, you can find out the most correlated features with car price, both positively and negatively. These are the features that should be the most decisive for our linear models.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/correlation%20price.png"/> <figcaption>
+            <h4>10 features most correlated with price</h4>
+        </figcaption>
+</figure>
+
+<h3 id="model-creation">Model creation</h3>
+<p>This project has been closed by creation of predictive models.
+Since we have found out some strongly correlated features with the target variable, we have decided to try linear regression and we have chosen an extensive approach including checks of 4 key assumptions.</p>
+<p>The first one was linear relationship of continuous variables. We have found out, that out of the 6 continuous variables, only odometer value and year produced show some kind of relation, however, it was non-linear, as we have already showed in case of production year.
+Since there was some exponential dependency, we have decided to get a cube root of price instead. This way, we have managed to linearize the relationships of production year and odometer value with price.</p>
+<p>Next step was assessing multicorrelated independent variables. According to various sources, we have decided to get rid of variables with correlation (in absolute value) over 0.8.
+We can see these pairs in the picture below. Making an educated guess, we have decided to drop model names and warranty status, since they likely held less information than thair respective pairs.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/multicorrelations.PNG"/> <figcaption>
+            <h4>Pairs of overly multicorrelated features</h4>
+        </figcaption>
+</figure>
+
+<p>For the next two assumptions, we needed to have a model built already. We have used scikit-learn&rsquo;s LinearRegression on a split dataset. 
+The residuals showed a beautiful normal distribution with mean of 0.01 (close enough to zero), which was our third assumption, as well as homoscedasticity, which was the last assumption.
+There was no need to check for autocorrelation, as the dataset included no real time series data.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/residuals%20distribution.png"/> <figcaption>
+            <h4>The residuals showed normal distribution</h4>
+        </figcaption>
+</figure>
+
+<p>In order to evaluate our models, we have built a simple function enabling us to count adjusted R squared metric. Apart from this, regular R squared, mean absolute error and root of mean squared error have been used.
+Our model showed both R squared and adjusted R squared metric around 0.87, which is very accurate and shows a strongly robust model, since these characteristics were almost identical.
+However, the model (and all following ones) has showed a massive (root) mean squared error. As we know, (R)MSE is a metric that strongly punishes outliers in terms of error by squaring these. 
+To address this, we have found out what entries were the outliers and examined them individually.
+We have found out, that these cars were mostly ones with high price despite being quite old. This may be caused for instance by these being &ldquo;veteran&rdquo; cars of higher values, which strongly confused our model. 
+However, there was no justifiable reason to just drop these entries, even though it may increase our model&rsquo;s performance.
+We have tried to improve our model by making some feature selection steps including permutation importance examination, dropping variables with no linear relation to price, dropping variables with very little correlation to price etc., however, none of these steps seemed to increase the performance of our model.</p>
+<p>To add to our model, we have also tried the OLS linear model from statsmodels, mainly for the purpose of it&rsquo;s extensive summary. This model reached R and R squared over 0.9 and allowed us to feature select based on p value and alpha threshold.
+We have built a function that iteratively simplifies this model by dropping features with p value over given alpha, ending when we either reach given number of features, go under a minimum R squared tolerated or when there are no features with p value over alpha.
+This way, we consistently managed to drop more than 250 features (most of them being dummy variables) at the loss of less than 0.01 R squared. This may have a very important use case in future analyses and could allow for simplification of models while guarding some boundaries.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/simplify.PNG"/> <figcaption>
+            <h4>Simplification function</h4>
+        </figcaption>
+</figure>
+
+<p>Lastly, a histogram gradient booster model has been built in order to try to achieve even bettwer accuracy than 0.9 of our OLS.
+We have managed to do this with it&rsquo;s R squared and adjusted R squared being both more than 0.92 (and both very similar, meaning a strongly robust model). This could probably be improved even further by tuning some of the hyperparameters or performing an extended feature selection.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Used%20cars/hist%20Rs.PNG"/> <figcaption>
+            <h4>Histogram Gradient Boosted results</h4>
+        </figcaption>
+</figure>
+
+<h2 id="hypotheses-after-examination">Hypotheses after examination</h2>
+<ul>
+<li>Porsche, Jaguar and Lexus are the most expensive brands with their opposites being Москвич, 3A3 and BA3 (evaluated by mean).</li>
+<li>Year of production and odometer value show negative linear relation and year of production shows strong positive correlation with price.</li>
+<li>New cars are in general much better priced as well as owned cars which still have warranty, however, the data in this column was strongly imbalanced.</li>
+<li>SUVs and pickups are the most expensive ones in terms of average price and so are electric and diesel cars.</li>
+<li>Except for one market, the location does not matter. One of possible explanations is that Минская market usually sells more luxurious cars.</li>
+<li>Feature_0 is the only feature among features 0-9 whose presence has a negative impact on price. This is also the only feature that tends to be more present withing older cars, however, we have not been able to think of a feature, that would give such outcome.</li>
+<li>The relation between price and duration listed seems to be rather inversely proportional. This may, however, be caused by dropping outliers in duration listed column.</li>
+</ul>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>We have managed to meet all of our goals. This means gaining meaningful insights from extensive EDA as well as creating a high performing model.</p>
+<p>Despite these victories, the real use case comes following to this analysis. A user interface could be built, with the inputs being the features of the car. Then, the estimator would return the most ideal price for such offer.
+This use case could be further improved by also adding the analysis of duration listed, which would then allow the user to manage the price based on how long he wants to wait until he or she or it manages to sell the car, similarly to how people invest based on their risk tolerance.
+Not only for the purpose of such use case, some additional features would be very helpful, examples being horsepower and max speed or trunk capacity of each car. These could be scraped off the internet. Information regarding the unknown features would also improve the analysis and following hypothetical interface by a lot.</p>
+<h2 id="possible-next-steps">Possible next steps</h2>
+<ul>
+<li>Dive more deeply into feature selection and hypertune the parameters of our model(s).</li>
+<li>Scrape additional data about the cars from the internet - horsepower, trunk capacity, max speed, etc.</li>
+<li>Analyse which cars could be considered &ldquo;veterans&rdquo; and might therefore be of higher price despite being old.
+<ul>
+<li>This may have a strong positive impact on our models as these semmed to be the biggest outliers in terms of RMSE.</li>
+</ul>
+</li>
+<li>Create a user interface where the user would input their car and the features of it and according to similar entries 
+a price would be estimated for it.
+<ul>
+<li>For this purpose, we would need to know what are the features feature_0 - feature_9.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://github.com/t-ded/DA-used_cars_project">Link to project´s repository on GitHub</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/data-science" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data Science</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/regression" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Regression</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/visualisation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Visualisation</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/machine-learning" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Machine Learning</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/">Project 1 Overview: Analysis of hotel reviews (Regression task)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/">Project 2 Overview: Recruitment process of a Data Science company (Classification task)</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-moon-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://t-ded.github.io/t-ded-portfolio/" >
+    &copy;  Data Science Portfolio 2021 
+  </a>
+    <div>
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://t-ded.github.io/t-ded-portfolio/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
