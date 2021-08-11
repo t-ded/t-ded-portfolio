@@ -6,10 +6,19 @@
     <description>Recent content in Python on Data Science Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Jul 2021 21:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Aug 2021 21:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://t-ded.github.io/t-ded-portfolio/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task)</title>
+      <link>https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/</link>
+      <pubDate>Tue, 10 Aug 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/</guid>
+      <description>Analysis of the relationship between diet and Covid-19 death rates - General EDA - Project Overview: Project Summary  Comprehensive data exploration and visualization including geographical analysis, which is something the author has never worked with before. This project may throw light on some of the most common misconceptions regarding diet as well as Covid-19 death rates, helping in fights against hoaxes and fake news. The analysis presented also enables us to compare some of the countries as well as continents and find some important patterns in terms of Covid-19 deaths, obesity and undernourishment.</description>
+    </item>
     
     <item>
       <title>Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)</title>

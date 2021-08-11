@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Data Science Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Jul 2021 21:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Aug 2021 21:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://t-ded.github.io/t-ded-portfolio/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,45 @@
     <item>
       <title>Data Science</title>
       <link>https://t-ded.github.io/t-ded-portfolio/tags/data-science/</link>
-      <pubDate>Tue, 13 Jul 2021 21:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 Aug 2021 21:00:00 +0000</pubDate>
       
       <guid>https://t-ded.github.io/t-ded-portfolio/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Geographical Analysis</title>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/geographical-analysis/</link>
+      <pubDate>Tue, 10 Aug 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/geographical-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/programming/</link>
+      <pubDate>Tue, 10 Aug 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/python/</link>
+      <pubDate>Tue, 10 Aug 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualisation</title>
+      <link>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</link>
+      <pubDate>Tue, 10 Aug 2021 21:00:00 +0000</pubDate>
+      
+      <guid>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</guid>
       <description></description>
     </item>
     
@@ -30,38 +66,11 @@
     </item>
     
     <item>
-      <title>Programming</title>
-      <link>https://t-ded.github.io/t-ded-portfolio/tags/programming/</link>
-      <pubDate>Tue, 13 Jul 2021 21:00:00 +0000</pubDate>
-      
-      <guid>https://t-ded.github.io/t-ded-portfolio/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://t-ded.github.io/t-ded-portfolio/tags/python/</link>
-      <pubDate>Tue, 13 Jul 2021 21:00:00 +0000</pubDate>
-      
-      <guid>https://t-ded.github.io/t-ded-portfolio/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Regression</title>
       <link>https://t-ded.github.io/t-ded-portfolio/tags/regression/</link>
       <pubDate>Tue, 13 Jul 2021 21:00:00 +0000</pubDate>
       
       <guid>https://t-ded.github.io/t-ded-portfolio/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Visualisation</title>
-      <link>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</link>
-      <pubDate>Tue, 13 Jul 2021 21:00:00 +0000</pubDate>
-      
-      <guid>https://t-ded.github.io/t-ded-portfolio/tags/visualisation/</guid>
       <description></description>
     </item>
     

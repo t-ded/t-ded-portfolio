@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task) | Data Science Portfolio</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.73.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://t-ded.github.io/t-ded-portfolio/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task)" />
+<meta property="og:description" content="Geographical analysis of diet, Covid-19 death rates and their relation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/" />
+<meta property="article:published_time" content="2021-08-10T21:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-10T21:00:00+00:00" />
+<meta itemprop="name" content="Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task)">
+<meta itemprop="description" content="Geographical analysis of diet, Covid-19 death rates and their relation">
+<meta itemprop="datePublished" content="2021-08-10T21:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-08-10T21:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2683">
+
+
+
+<meta itemprop="keywords" content="Python,Data Science,Visualisation,Programming,Geographical Analysis," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task)"/>
+<meta name="twitter:description" content="Geographical analysis of diet, Covid-19 death rates and their relation"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/Percentage%20of%20Covid-19%20cases%20resulting%20in%20death.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://t-ded.github.io/t-ded-portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Data Science Portfolio
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/about/" title="About me page">
+              About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://t-ded.github.io/t-ded-portfolio/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task)</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Geographical analysis of diet, Covid-19 death rates and their relation
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/&amp;text=Project%204%20Overview:%20Analysis%20of%20world%20countries,%20average%20diet%20habits%20and%20Covid-19%20death%20rates%20%28General%20EDA%20task%29" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/&amp;title=Project%204%20Overview:%20Analysis%20of%20world%20countries,%20average%20diet%20habits%20and%20Covid-19%20death%20rates%20%28General%20EDA%20task%29" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 4 Overview: Analysis of world countries, average diet habits and Covid-19 death rates (General EDA task)</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-08-10T21:00:00Z">August 10, 2021</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 13 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 2683 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="analysis-of-the-relationship-between-diet-and-covid-19-death-rates---general-eda---project-overviewhttpst-dedgithubiot-ded-portfolioprojectscovid-diet"><a href="https://t-ded.github.io/t-ded-portfolio/projects/covid-diet/">Analysis of the relationship between diet and Covid-19 death rates - General EDA - Project Overview:</a></h1>
+<h2 id="project-summary">Project Summary</h2>
+<ul>
+<li><strong>Comprehensive data exploration and visualization</strong> including <strong>geographical analysis</strong>, which is something the author has never worked with before.</li>
+<li>This project may <strong>throw light on some of the most common misconceptions</strong> regarding diet as well as Covid-19 death rates, helping in fights against hoaxes and fake news.</li>
+<li>The analysis presented also enables us to compare some of the countries as well as continents and <strong>find some important patterns</strong> in terms of Covid-19 deaths, obesity and undernourishment.</li>
+<li>Particular focus is given to <strong>the Czech Republic</strong> along with Europe, especially Central Europe.</li>
+<li>No ML algorithm has been implemented due to the features showing very little relation (it would be extremely hard to make a model perform at least at a basic level) as well as the number of samples (countries) being very low.</li>
+</ul>
+<h2 id="project-background">Project Background</h2>
+<ul>
+<li>The dataset has been chosen for some of its practical usecase as well as for the significance of the topic in the current world.</li>
+<li>The <a href="https://www.kaggle.com/mariaren/covid19-healthy-diet-dataset">initial dataset</a> contains information about 170 countries in more than 25 food type columns.</li>
+<li>We have decided to only revolve this analysis around EDA and geographical analysis for the purpose of learning the concept.</li>
+</ul>
+<h2 id="project-outline">Project outline</h2>
+<ul>
+<li>State the initial hypotheses and assumptions, decide for an approach</li>
+<li>Make necessary imports, take first look at the dataset</li>
+<li>Decide how to clean the dataset and engineer some of the missing values</li>
+<li>Analyse the individual distribution of some of the important features</li>
+<li>Research the relations of undernourishment, obesity and deaths</li>
+<li>Perform an analysis of diet and deaths &amp; obesity relations
+<ul>
+<li>Try splitting food into generally healthy &amp; unhealthy</li>
+<li>Give some additional focus to vegan lifestyle</li>
+</ul>
+</li>
+<li>Initiate geographical analysis
+<ul>
+<li>Start out with general world analysis</li>
+<li>Pay special attention to Europe</li>
+<li>Split the dataset into continents and compare these (add Czechia, Slovakia &amp; Central Europe)</li>
+</ul>
+</li>
+<li>Correlation inspection</li>
+</ul>
+<h2 id="hypotheses-and-notes">Hypotheses and notes</h2>
+<ul>
+<li>Some food products will lead to higher death percentages - alcohol, animal fats, sugars, stimulants</li>
+<li>Animal fats and sugars will also lead to higher obesity percentage</li>
+<li>On the contrary, food such as fish, fruits or vegetables will be correlated with lower death rates</li>
+<li>Since obesity is a risk factor of covid, obesity &amp; deaths will be positively correlated</li>
+<li>Undernourished percentage and death rate will also be positively correlated since there are higher percentages of undernourishment in developing countries with worse health care</li>
+</ul>
+<h2 id="analysis-breakdown">Analysis breakdown</h2>
+<h3 id="first-steps">First steps</h3>
+<p>This dataset consists of averaged values for 170 countries, including information about undernourishment, obesity and Covid-19 deaths, as well as the portion of caloric intake taken from specific food groups.
+Apart from these, some additional features had been included, such as number of Covid-19 cases, however, we have decided to revolve this analysis around the Covid-19 death rates (which we have engineered from number of deaths and all cases) and drop other columns, that could be more impactful for instance for the number of all confirmed cases (e.g. population).</p>
+<p>The dataset contained 14 rows that included a NaN entry. Since these were never in some food type column, we have been able to fill these manually based on information from the internet and keep the rows in the dataset.
+The look of the dataset after some of these initial steps can be seen in the picture below.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/initial_dfinfo.PNG"/> <figcaption>
+            <h4>The initial look at the dataset</h4>
+        </figcaption>
+</figure>
+
+<p>There were also multiple outliers present in the dataset (regarding many different features). These have not been dealt with by any means, since there is no justifiable reasoning for their exlusion from the data and their extremity is hardly likely to be an error. However, often times they have been excluded from the visualizations to avoid the need to scale one of the axes.</p>
+<h3 id="key-variables-analysis">Key variables analysis</h3>
+<p>In this part, we have taken a look at the distributions and relations of our key variables, meaning undernourishment, obesity and deaths.
+We could see a distribution which could be called bimodal among the obesity data, also a distribution similar to exponential one in the undernourishment column.
+As you can see in the picture below, the death rate distribution was most similar to log normal (or a strongly right-skewed normal) distribution.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/death%20rate%20distribution.png"/> 
+</figure>
+
+<p>Regarding the relationships between these variables, there have been no clear signs of any, as the reader can see in the scatterplots below.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/key%20variables%20scatterplot.png"/> <figcaption>
+            <h4>No evidence of relationship of these variables has been found</h4>
+        </figcaption>
+</figure>
+
+<h3 id="healthy-vs-unhealthy-food-analysis">Healthy vs. unhealthy food analysis</h3>
+<p>To gain some invaluable insights, we have decided to classify some of the food groups as generally healthy and generally unhealthy.
+This approach is a bit tricky, firstly because any food can be put in both of these categories in some extreme cases. However, we have decided that food types such as Fruits or Sugars &amp; Sweeteners can be justifiably labeled in 99.9 % of cases.
+The second flaw to this approach is the nature of data collection in this dataset, since some of the groups also contain products made of the respective food types. An example for this would be an apple in the fruits category - it has not been clearly defined by the author of the dataset in which category an &ldquo;unhealthy&rdquo; sweetened product made of apples would be considered.</p>
+<p>In terms of the results, most of the categories did not bring any interesting outcome both in their relation with obesity and death rates.</p>
+<p>From the perspective of obesity, the healthy food categories showing a relationship were fruits (linear) and treenuts (exponential). 
+The explanation for this may be that people in highly-developed countries (meaning higher obesity rates) are more likely to be able to afford a lot of fruits in their diet. However, this is not the case as we will see later on, and therefore, we have not managed to come up with a plausible solution to this question. 
+Despite being healthy, fruits also contain lots of &ldquo;fast sugars&rdquo;, so inadequate consumption may lead to gaining overweight. Meanwhile treenuts are mostly made of fats and therefore their high consumption may cause obesity.
+As of the death rate relationships, none of the healthy food categories show any clear signs of relationship.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/treenuts.PNG"/> <figcaption>
+            <h4>Signs of exponential relation of treenuts consumption and obesity rates</h4>
+        </figcaption>
+</figure>
+
+<p>Regarding the unhealthy food, the categories that have shown the most clear patterns were stimulants (linear, close to exponential, relation with obesity and somewhat exponential relation with death rates) and sugar &amp; sweeteners (linear relationship with obesity).
+The obesity-sugar pattern is not very surprising. On the other hand, the stimulants seeming impactful for these two key variables, may come of a surprise at first glance. However, the most likely explanation is, once again, the higher consumption rate of stimulants in highly developed countries with better health care.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/stimulants.PNG"/> <figcaption>
+            <h4>Stimulants consumption shows some kind of relation with both variables</h4>
+        </figcaption>
+</figure>
+
+<h3 id="vegan-lifestyle">Vegan lifestyle</h3>
+<p>In order to take another perspective, we have decided to try to look at the food types from the point of their source.
+We have not managed to find any meaningful relation between meat/animal products consumption and Covid-19 death rates.
+However, quite surprisingly, we have found either exponential or linear pattern between every animal product in the dataset except aquatic ones and obesity. In other words, consumption of any food from all these categories (animal products, animal fats, eggs, meat and milk) tends to strongly raise the obesity rates.
+An example of this is the general &ldquo;Meat&rdquo; category which you can find in the picture below.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/meat.PNG"/> <figcaption>
+            <h4>We can see clear linear pattern in the left (obesity) chart</h4>
+        </figcaption>
+</figure>
+
+<h3 id="geographical-analysis">Geographical analysis</h3>
+<p>Moving on to the most important part. In the notebook, the reader can find the countries who are at the top or at the bottom for various variables (e.g. most alcohol consumptions, most deaths etc.) in both tabular and geographical chart form. 
+To create the geographical charts, the geopandas library has been used. Apart from this possibility, the library&rsquo;s own world dataset preserves valuable information about gross domestic product, which felt like an important metric to analyse and you can find the results in the picture below.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/gdp.png"/> <figcaption>
+            <h4>There can be found some evident relationship of GDP and undernourishment as well as obesity</h4>
+        </figcaption>
+</figure>
+
+<p>We also had to make some small adjustments to both datasets (our and geopandas&rsquo;) to be able to merge them by country names.
+To visualize the data properly, we have colourcoded the countries based on the given feature and also found a way to implement text labels into the chart for some of the countries. There were also some countries for which the data has not been presented but are on the map (red hatched).</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/deaths%20world.png"/> <figcaption>
+            <h4>World map of Covid-19 death rates</h4>
+        </figcaption>
+</figure>
+
+<p>In order to focus more on the Czech Republic and it&rsquo;s surroundings, we have trimmed the dataset to only contain Europe. Then, we visualized some of the features for this region only, adding the text labels for the &ldquo;top&rdquo; countries in terms of the feature as well as for Czechia and Slovakia.
+One of the interesting food categories was alcohol consumption, since the Czech Republic is known for it&rsquo;s high rate. This has been proven in the analysis and can be easily seen on the map.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/alcohol.png"/> <figcaption>
+            <h4>The Czech Republic is the country with the highest alcohol consumption in Europe</h4>
+        </figcaption>
+</figure>
+
+<p>Last but not least, we have decided to compare some broader regions among themselves as well as with the Czech Republic and Slovakia. We have split and re-grouped the dataset based on continents (while also adding information for Central Europe, Czechia, Slovakia and the whole world).</p>
+<p>In the picture below, we can see the comparison for animal products. As we can see, Europe is strongly above the general trend in this category with Slovakia being the extreme example of this. On the other hand, African countries tend to consume  animal based products very little compared to the rest of the world. 
+You may also notice, that all countries in the Central Europe (including Czechia and Slovakia) tend to eat way less fish and seafood than is the world average. This may easily be explained by the lack of proper access to sea and fishing possibilities. We can see, not very surprisingly, the exact opposite among Oceania countries.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/animal%20continents.PNG"/> <figcaption>
+            <h4>Animal-based products consumption based on region</h4>
+        </figcaption>
+</figure>
+
+<p>In terms of vegetal products, we can see quite the opposite trend - European countries tend to lag behind their world counterparts in most of the categories (a big exception being vegetable oils). Here we can see, that our hypothesis regarding the fruit consumption was not right, because African countries, which are in general lot worse developed (see later), show quite high rates of fruit consumption.
+We can also see that starchy roots form an important portion of the general African diet, this is also true for the Oceanian countries.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/vegetal%20continents.PNG"/> <figcaption>
+            <h4>Vegetal products consumption based on region</h4>
+        </figcaption>
+</figure>
+
+<p>Next up are some food types thah could not have been included in the categories above. 
+In Europe, pulses form a rather small part of our diet, however, this is definitely not the case for Africa and North America. From the perspective of spices, Asian countries tend to have high averages in here, which is not very surprising, taking into consideration the usual Asian cuisine.</p>
+<p>Europe in general has a rather high stimulants consumption, Africa, on the other hand, has close to none. 
+And from the point of sugar and sweeteners, America in general has strong consumption of these which may be in correlation with high obesity rates in mainly the North American countries. Not far behind is the Czech Republic, which we can find quite high above the European average. Slovakia, on the other hand, is quite low below.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/other%20continents.PNG"/> <figcaption>
+            <h4>Other types of products consumption based on region</h4>
+        </figcaption>
+</figure>
+
+<p>Now let&rsquo;s move on to the key variables (we have added gross domestic product from the geopandas library dataset).
+We can clearly see that Asian and North American countries are strongly ahead in terms of GDP, however, they are also far worse in terms of undernourished rates in comparison to Europe. This may be due to strong differences between rich &amp; poor countries in these continents as well as due to these countries being very populated.
+Speaking of undernourishment, African countries are having the worst statistic in this category, which is in correlation with the lowest average GDP.</p>
+<p>In terms of obesity, the rates seem to be a bit correlated with high GDP (the exception being the Asian and Oceanian countries). The obesity rates in Oceania seem quite surprising.
+From the perspective of deaths, we can see none strongly evident patterns (we would&rsquo;ve expected maybe some inverse proportion of GDP and death rates). We may also conclude that the Czech Republic did quite well in preventing Covid-19 deaths as the death rate is quite a lot below the Central European and world averages.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/key%20continents.PNG"/> <figcaption>
+            <h4>Key variables based on region</h4>
+        </figcaption>
+</figure>
+
+<h3 id="correlation-analysis">Correlation analysis</h3>
+<p>The full correlation table can be found in the notebook. In the picture below, the reader can see the strongest variables in terms of correlation or anticorrelation with death rate.
+The insights shown here are mostly the ones we have already concluded such as stimulants and fish consumption being anticorrelated with death rate (but do not forget that correlation != causation, we think this is especially important regarding the stimulants consumption). On the other hand, sugar consumption tends to worsen the death rates and so does undernourishment and cereals consumption, although we have not found and proven such relations earlier.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/correlation%20deaths.png"/> <figcaption>
+            <h4>10 features most correlated with deaths</h4>
+        </figcaption>
+</figure>
+
+<p>By chance, we have discovered that some new and very strong relationship are formed when we perform the correlation analysis on the dataset that is grouped by continents (the one that has been showed above).
+These findings are quite interesting and mostly correspond with what we have already concluded above, however, the insight is not to be fully trusted since the sample size is very low (2 countries, 1 region, 6 continents and the whole world). Since some of the entries are not exclusive (Czechia &amp; Slovakia have their own rows, however, they are also included in the world, Europe and Central Europe rows), these insights are strongly biased.</p>
+<figure>
+    <img src="https://t-ded.github.io/t-ded-portfolio/images/Covid%20&amp;%20diet/correlation%20deaths%20grouped.png"/> <figcaption>
+            <h4>10 features most correlated with deaths after grouping</h4>
+        </figcaption>
+</figure>
+
+<h2 id="hypotheses-after-examination">Hypotheses after examination</h2>
+<ul>
+<li>Animal fats and sugars show slight positive impact on the Covid-19 death rates, this is also true for cereals</li>
+<li>Alcohol and stimulants, as well as spices, show the exact opposite relation - we have concluded that this is due to these products being more consumed in well-developed countries</li>
+<li>In general, sugar and most of the animal products (eggs, milk, meat, fats etc.) show clear signs of positive relation with obesity percentages</li>
+<li>Fish &amp; seafood seem to battle covid-19 death rates quite effectively, however, this is not true for other generally healthy food such as fruits or vegetables</li>
+<li>Obesity and deaths seem to have no relationship whatsoever</li>
+<li>Undernourishment and death percentage have quite strong positive correlation</li>
+</ul>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>We have managed to either prove or disprove most of our hypotheses and extensively visualize the geographical data.</p>
+<p>The main purpose of this task, to learn with the geographical analysis tools, has been met, however, from the analytical point of view, this task has not brought as much insight as expected.
+We have concluded that this is mainly due to a very thin dataset. To perform a comprehensive analysis including a classification predictive model, we would need a dataset containing the information about the individual people.
+This would allow us to really extensively analyse and predict the key factors related to Covid-19 death risk that are included in our diets and would enable us to have a strong real world impact.</p>
+<h2 id="possible-next-steps">Possible next steps</h2>
+<ul>
+<li>Transform the variables, find our impactful features and try to re-build some ML models</li>
+<li>Obtain additional information about the countries, such as health care quality etc. in order to find some deeper patterns</li>
+<li>Consult the features with a nutrition specialist and work together towards a relevant research</li>
+<li>Note: This analysis would be far more effective overall if we managed to obtain data about some individual samples from the countries (e.g. 100 people from the general population for each country) and not only the average percentages</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://github.com/t-ded/DA-used_cars_project">Link to project´s repository on GitHub</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/data-science" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data Science</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/visualisation" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Visualisation</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/programming" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Programming</a>
+   </li>
+  
+   <li class="list">
+     <a href="https://t-ded.github.io/t-ded-portfolio/tags/geographical-analysis" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Geographical Analysis</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="https://t-ded.github.io/t-ded-portfolio/projects/used-cars-market/">Project 3 Overview: Analysis of prices of cars offered at car markets (Regression task)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://t-ded.github.io/t-ded-portfolio/projects/job-change-of-data-scientists/">Project 2 Overview: Recruitment process of a Data Science company (Classification task)</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="https://t-ded.github.io/t-ded-portfolio/projects/hotel-reviews/">Project 1 Overview: Analysis of hotel reviews (Regression task)</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-moon-gray bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://t-ded.github.io/t-ded-portfolio/" >
+    &copy;  Data Science Portfolio 2021 
+  </a>
+    <div>
+
+
+
+<a href="https://www.facebook.com/tomas.ded.1/" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+<a href="https://github.com/t-ded" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://t-ded.github.io/t-ded-portfolio/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
